@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: acm-policies
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/rh-datascience-and-edge-practice/acm-hub-gitops.git
+      revision: main
+      directories:
+      - path: components/policies/*
+  template:
+    metadata:
+      name: 'acm-policy-{{path.basename}}'
+    spec:
+      project: acm-config
+      source:
+        repoURL: https://github.com/rh-datascience-and-edge-practice/acm-hub-gitops.git
+        targetRevision: main
+        path: '{{path}}/overlays/default'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: acm-policies
