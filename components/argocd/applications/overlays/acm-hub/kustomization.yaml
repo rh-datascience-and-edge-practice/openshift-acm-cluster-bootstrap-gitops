@@ -5,3 +5,12 @@ namespace: openshift-gitops
 
 resources:
   - ../../base
+
+patches:
+  - target:
+      name: cluster-config-app-of-apps
+      kind: Application
+    patch: |-
+      - op: replace
+        path: /spec/source/path
+        value: clusters/overlays/acm-hub
