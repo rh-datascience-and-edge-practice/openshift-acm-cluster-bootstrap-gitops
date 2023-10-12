@@ -6,6 +6,7 @@ namespace: openshift-gitops
 resources:
   - ../../base
   - acm-policy-appset.yaml
+  - operator-acm-app.yaml
 
 patches:
   - path: patch-operators-list.yaml

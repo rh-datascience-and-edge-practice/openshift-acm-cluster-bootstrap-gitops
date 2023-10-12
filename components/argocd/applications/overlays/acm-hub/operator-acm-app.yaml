@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: operator-acm
+spec:
+  destination:
+    name: ''
+    namespace: ''
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: >-
+      components/operators/advanced-cluster-management/aggregate/overlays/default
+    repoURL: 'https://github.com/rh-datascience-and-edge-practice/acm-hub-gitops.git'
+    targetRevision: main
+  sources: []
+  project: operator-config
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
