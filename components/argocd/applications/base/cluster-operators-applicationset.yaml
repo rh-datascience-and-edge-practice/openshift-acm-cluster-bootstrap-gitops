@@ -34,4 +34,3 @@ spec:
         path: '{{values.path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: openshift-gitops
