@@ -6,3 +6,8 @@
       values:
         name: operator-openshift-dev-spaces
         path: components/operators/openshift-dev-spaces/aggregate/overlays/default
+    - cluster: local
+      url: https://kubernetes.default.svc
+      values:
+        name: operator-openshift-data-foundations
+        path: components/operators/openshift-data-foundation/aggregate/overlays/aws-node-labeler-4.12
