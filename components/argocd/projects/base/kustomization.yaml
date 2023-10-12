@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-  - cluster-config-project.yaml
+  - operator-config-project.yaml

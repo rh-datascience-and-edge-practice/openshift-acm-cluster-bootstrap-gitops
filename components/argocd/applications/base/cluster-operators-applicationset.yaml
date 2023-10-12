@@ -17,7 +17,7 @@ spec:
         argocd.argoproj.io/compare-options: IgnoreExtraneous
         argocd.argoproj.io/sync-options: Prune=false
     spec:
-      project: cluster-config
+      project: operator-config
       syncPolicy:
         automated:
           prune: false
